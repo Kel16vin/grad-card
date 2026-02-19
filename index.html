@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Invitation | 2026</title>
+    <link rel="icon" type="image/png" href="logo.png?v=1">
+    <link rel="shortcut icon" type="image/png" href="logo.png?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mak-green: #006a3a;
+            --mak-gold: #ffcc00;
+            --dark-text: #2c3e50;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Hero Section with the Ivory Tower Aesthetic */
+        .hero {
+            height: 32vh;
+            min-height: 180px;
+            background: linear-gradient(rgba(0, 106, 58, 0.8), rgba(0, 106, 58, 0.9)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Makerere_University_Administration_Block.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero img {
+            width: 150px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .anthem-snippet {
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            max-width: 600px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 8px;
+        }
+
+        /* Invitation Content */
+        .content {
+            max-width: 800px;
+            margin: -20px auto 20px;
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guest-honor {
+            color: var(--mak-green);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .main-message {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            line-height: 1.35;
+            margin-bottom: 18px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            border-top: 2px solid var(--mak-green);
+            border-bottom: 2px solid var(--mak-green);
+            padding: 16px 0;
+            margin: 16px 0;
+        }
+
+        .info-item h3 {
+            color: var(--mak-green);
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .info-item p {
+            font-weight: 700;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .location-tag {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+
+        .location-tag a {
+            color: var(--mak-green);
+            text-decoration: underline;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .location-tag a:hover {
+            opacity: 0.7;
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        .footer p {
+            margin: 4px 0;
+        }
+
+        .accent-bar {
+            width: 50px;
+            height: 5px;
+            background: var(--mak-gold);
+            margin: 20px auto;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 50px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guest-honor {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .main-message {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .info-grid {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .location-tag {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .footer {
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        @keyframes floatGently {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .hero {
+            animation: floatGently 4s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0% {
+                transform: translateY(-50%) translateX(0px);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-50%) translateX(10px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-50%) translateX(0px);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                transform: translateY(-50%) translateX(0px);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-50%) translateX(-10px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-50%) translateX(0px);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes float3 {
+            0% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-15px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+        }
+
+        .floating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: transparent;
+        }
+
+        .floating-img {
+            position: absolute;
+            opacity: 0.4;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .float-img-1 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            animation: float1 15s infinite ease-in-out;
+        }
+
+        .float-img-2 {
+            width: 180px;
+            height: 180px;
+            bottom: -70px;
+            left: 25%;
+            animation: float2 20s infinite ease-in-out;
+        }
+
+        .float-img-3 {
+            width: 150px;
+            height: 150px;
+            bottom: -60px;
+            left: 45%;
+            animation: float3 18s infinite ease-in-out;
+        }
+
+        .float-img-4 {
+            width: 170px;
+            height: 170px;
+            bottom: -75px;
+            right: 20%;
+            animation: float1 22s infinite ease-in-out;
+        }
+
+        .float-img-5 {
+            width: 190px;
+            height: 190px;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
+            animation: float2 19s infinite ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 28vh;
+                min-height: 160px;
+                padding: 12px;
+            }
+            .hero h1 { font-size: 1.4rem; }
+            .hero img { width: 65px; margin-bottom: 8px; }
+            .anthem-snippet { font-size: 0.75rem; margin-top: 6px; padding-top: 6px; }
+            .content { margin: -15px 10px 15px; padding: 18px 12px; }
+            .main-message { font-size: 1.15rem; margin-bottom: 14px; }
+            .info-grid { grid-template-columns: 1fr; gap: 10px; padding: 12px 0; margin: 12px 0; }
+            .info-item h3 { font-size: 0.7rem; margin-bottom: 3px; }
+            .info-item p { font-size: 0.9rem; }
+            .location-tag { padding: 10px; font-size: 0.85rem; }
+            .footer { margin-top: 12px; font-size: 0.75rem; }
+            .footer p { margin: 3px 0; }
+            .accent-bar { width: 40px; margin: 12px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-bg">
+        <div class="floating-img float-img-1" style="background-image: url('images/download-removebg-preview.png');"></div>
+        <div class="floating-img float-img-2" style="background-image: url('images/image-removebg-preview.png');"></div>
+        <div class="floating-img float-img-3" style="background-image: url('images/images-removebg-preview.png');"></div>
+        <div class="floating-img float-img-4" style="background-image: url('images/images__1_-removebg-preview.png');"></div>
+        <div class="floating-img float-img-5" style="background-image: url('images/logo-removebg-preview.png');"></div>
+    </div>
+
+    <section class="hero">
+        <img src="logo.png" alt="Makerere University Logo">
+        <h1>Class of 2026</h1>
+        <div class="anthem-snippet">
+            "Great, Great and Mighty, the walls around thee..."
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="guest-honor">Official Invitation</div>
+        <div class="accent-bar"></div>
+        
+        <p class="main-message">
+            We are honored to invite <br>Asasira Tracy<br>
+            to celebrate the Graduation Party<br>
+            of<br>
+            <span style="color:var(--mak-green); font-weight:bold;">Akampa John Kelvin</span>
+        </p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Date</h3>
+                <p>25th Feb, 2026</p>
+            </div>
+            <div class="info-item">
+                <h3>Time</h3>
+                <p>02:00 PM</p>
+            </div>
+            <div class="info-item">
+                <h3>Venue</h3>
+                <p>Little Rock Gardens</p>
+            </div>
+        </div>
+
+        <div class="location-tag">
+            <strong>Location:</strong> <a href="https://maps.app.goo.gl/r8qjQV6Ae34hzfWB9" target="_blank">Zana, Entebbe Road</a>
+        </div>
+
+        <div class="footer">
+            <p>Your presence is the greatest gift we could ask for.</p>
+            <p><strong>#MakerereGrad2026</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
